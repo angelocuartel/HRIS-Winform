@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4ffc5c96dbba484aa46634c4e8b5a590" Name="Diagram1">
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Adjustment_Global_Settings_Table" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Attendance_Global_Settings_Table" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Cash_Advance_Table" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Deductions_Table" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Department_Table" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Employee_Allowance_Table" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Employee_Attendance_Table" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Employee_Information_Table" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.employee_leave_table" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Employee_Portal_Accounts_Table" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Employee_Positions_Table" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Employees_Documents_Table" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Holidays_Table" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.HRIS_Account_Table" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.HRIS_System_Global_Settings__Table" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Leave_Type_Table" Width="1.5" PointX="7.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Log_History_Table" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Payroll_Table" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.Penalty_Global_Settings_Table" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeInformationSystemDataBaseEntities.sysdiagram" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EmployeeInformationSystemDataBaseEntities.FK_Cash_Advance_Table_Employee_Information_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="EmployeeInformationSystemDataBaseEntities.FK_Employee_Attendance_Table_Employee_Information_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="EmployeeInformationSystemDataBaseEntities.FK_Accounts_Table_Employee_Information_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="EmployeeInformationSystemDataBaseEntities.FK_employee_leave_table_employee_leave_table" ManuallyRouted="false" />
+        <AssociationConnector Association="EmployeeInformationSystemDataBaseEntities.FK_Employees_Documents_Table_Employee_Information_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="EmployeeInformationSystemDataBaseEntities.FK_Payroll_Table_Employee_Information_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="EmployeeInformationSystemDataBaseEntities.FK_Log_History_Table_Log_History_Table" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_a7729a_hrisdatabaseModelStoreContainer" CdmEntityContainer="EmployeeInformationSystemDataBaseEntities">
+    <EntitySetMapping Name="Adjustment_Global_Settings_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Adjustment_Global_Settings_Table">
+        <MappingFragment StoreEntitySet="Adjustment_Global_Settings_Table">
+          <ScalarProperty Name="adjustment_id" ColumnName="adjustment_id" />
+          <ScalarProperty Name="adjustment_type" ColumnName="adjustment_type" />
+          <ScalarProperty Name="amount_percent" ColumnName="amount_percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attendance_Global_Settings_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Attendance_Global_Settings_Table">
+        <MappingFragment StoreEntitySet="Attendance_Global_Settings_Table">
+          <ScalarProperty Name="setting_time_id" ColumnName="setting_time_id" />
+          <ScalarProperty Name="global_time_in_mandatory" ColumnName="global_time_in_mandatory" />
+          <ScalarProperty Name="global_time_out_mandatory" ColumnName="global_time_out_mandatory" />
+          <ScalarProperty Name="late_grace_time_period" ColumnName="late_grace_time_period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cash_Advance_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Cash_Advance_Table">
+        <MappingFragment StoreEntitySet="Cash_Advance_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="total_payment" ColumnName="total_payment" />
+          <ScalarProperty Name="amount_payment_per_month" ColumnName="amount_payment_per_month" />
+          <ScalarProperty Name="month_length" ColumnName="month_length" />
+          <ScalarProperty Name="remaining_balance" ColumnName="remaining_balance" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="log_by" ColumnName="log_by" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deductions_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Deductions_Table">
+        <MappingFragment StoreEntitySet="Deductions_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="deduction_type" ColumnName="deduction_type" />
+          <ScalarProperty Name="deduction_amount" ColumnName="deduction_amount" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="log_by" ColumnName="log_by" />
+          <ScalarProperty Name="deduction_name" ColumnName="deduction_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Department_Table">
+        <MappingFragment StoreEntitySet="Department_Table">
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="department_date_added" ColumnName="department_date_added" />
+          <ScalarProperty Name="department_code" ColumnName="department_code" />
+          <ScalarProperty Name="department_head" ColumnName="department_head" />
+          <ScalarProperty Name="added_by" ColumnName="added_by" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Allowance_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Employee_Allowance_Table">
+        <MappingFragment StoreEntitySet="Employee_Allowance_Table">
+          <ScalarProperty Name="allowance_id" ColumnName="allowance_id" />
+          <ScalarProperty Name="allowance_name" ColumnName="allowance_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="amount_per_month" ColumnName="amount_per_month" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="log_by" ColumnName="log_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Attendance_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Employee_Attendance_Table">
+        <MappingFragment StoreEntitySet="Employee_Attendance_Table">
+          <ScalarProperty Name="attendance_id" ColumnName="attendance_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="time_in" ColumnName="time_in" />
+          <ScalarProperty Name="time_out" ColumnName="time_out" />
+          <ScalarProperty Name="working_hours" ColumnName="working_hours" />
+          <ScalarProperty Name="attendance_status" ColumnName="attendance_status" />
+          <ScalarProperty Name="overtime_hours" ColumnName="overtime_hours" />
+          <ScalarProperty Name="rate_earned" ColumnName="rate_earned" />
+          <ScalarProperty Name="day_type" ColumnName="day_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Information_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Employee_Information_Table">
+        <MappingFragment StoreEntitySet="Employee_Information_Table">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="employee_work_id" ColumnName="employee_work_id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="given_name" ColumnName="given_name" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="current_address" ColumnName="current_address" />
+          <ScalarProperty Name="house_lot_block_number" ColumnName="house_lot_block_number" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="brgy" ColumnName="brgy" />
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="contract" ColumnName="contract" />
+          <ScalarProperty Name="job_title" ColumnName="job_title" />
+          <ScalarProperty Name="rate_per_hour" ColumnName="rate_per_hour" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="campus_assigned" ColumnName="campus_assigned" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="date_hired" ColumnName="date_hired" />
+          <ScalarProperty Name="work_location" ColumnName="work_location" />
+          <ScalarProperty Name="philhealth_number" ColumnName="philhealth_number" />
+          <ScalarProperty Name="SSS_number" ColumnName="SSS_number" />
+          <ScalarProperty Name="TIN_number" ColumnName="TIN_number" />
+          <ScalarProperty Name="profile_picture" ColumnName="profile_picture" />
+          <ScalarProperty Name="employee_status" ColumnName="employee_status" />
+          <ScalarProperty Name="required_documents" ColumnName="required_documents" />
+          <ScalarProperty Name="description_for_archiving" ColumnName="description_for_archiving" />
+          <ScalarProperty Name="suspension_lift_date" ColumnName="suspension_lift_date" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="email_received" ColumnName="email_received" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employee_leave_table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.employee_leave_table">
+        <MappingFragment StoreEntitySet="employee_leave_table">
+          <ScalarProperty Name="leave_id" ColumnName="leave_id" />
+          <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="leave_type" ColumnName="leave_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Portal_Accounts_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Employee_Portal_Accounts_Table">
+        <MappingFragment StoreEntitySet="Employee_Portal_Accounts_Table">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="account_status" ColumnName="account_status" />
+          <ScalarProperty Name="portal_account_id" ColumnName="portal_account_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Positions_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Employee_Positions_Table">
+        <MappingFragment StoreEntitySet="Employee_Positions_Table">
+          <ScalarProperty Name="position_id" ColumnName="position_id" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="rate_per_hour" ColumnName="rate_per_hour" />
+          <ScalarProperty Name="log_by" ColumnName="log_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees_Documents_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Employees_Documents_Table">
+        <MappingFragment StoreEntitySet="Employees_Documents_Table">
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+          <ScalarProperty Name="date_uploaded" ColumnName="date_uploaded" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+          <ScalarProperty Name="added_by" ColumnName="added_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holidays_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Holidays_Table">
+        <MappingFragment StoreEntitySet="Holidays_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="holiday_title" ColumnName="holiday_title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="date_occurrence" ColumnName="date_occurrence" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="log_by" ColumnName="log_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRIS_Account_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.HRIS_Account_Table">
+        <MappingFragment StoreEntitySet="HRIS_Account_Table">
+          <ScalarProperty Name="hris_account_id" ColumnName="hris_account_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="access_level" ColumnName="access_level" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="account_status" ColumnName="account_status" />
+          <ScalarProperty Name="profile_picture" ColumnName="profile_picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HRIS_System_Global_Settings__Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.HRIS_System_Global_Settings__Table">
+        <MappingFragment StoreEntitySet="HRIS_System_Global_Settings|_Table">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="system_name" ColumnName="system_name" />
+          <ScalarProperty Name="system_logo" ColumnName="system_logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leave_Type_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Leave_Type_Table">
+        <MappingFragment StoreEntitySet="Leave_Type_Table">
+          <ScalarProperty Name="leave_type_id" ColumnName="leave_type_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="leave_type_name" ColumnName="leave_type_name" />
+          <ScalarProperty Name="leave_type_date_added" ColumnName="leave_type_date_added" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log_History_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Log_History_Table">
+        <MappingFragment StoreEntitySet="Log_History_Table">
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="login_date" ColumnName="login_date" />
+          <ScalarProperty Name="login_time" ColumnName="login_time" />
+          <ScalarProperty Name="logout_date" ColumnName="logout_date" />
+          <ScalarProperty Name="logout_time" ColumnName="logout_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payroll_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Payroll_Table">
+        <MappingFragment StoreEntitySet="Payroll_Table">
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+          <ScalarProperty Name="total_hours_rendered" ColumnName="total_hours_rendered" />
+          <ScalarProperty Name="total_days_work" ColumnName="total_days_work" />
+          <ScalarProperty Name="basic_pay" ColumnName="basic_pay" />
+          <ScalarProperty Name="allowance" ColumnName="allowance" />
+          <ScalarProperty Name="gross_pay" ColumnName="gross_pay" />
+          <ScalarProperty Name="date_issued" ColumnName="date_issued" />
+          <ScalarProperty Name="total_overtime_hours" ColumnName="total_overtime_hours" />
+          <ScalarProperty Name="overtime_pay" ColumnName="overtime_pay" />
+          <ScalarProperty Name="cash_advance_remaining_balance" ColumnName="cash_advance_remaining_balance" />
+          <ScalarProperty Name="cash_advance_payment" ColumnName="cash_advance_payment" />
+          <ScalarProperty Name="cutoff_start" ColumnName="cutoff_start" />
+          <ScalarProperty Name="cutoff_end" ColumnName="cutoff_end" />
+          <ScalarProperty Name="late_deductions" ColumnName="late_deductions" />
+          <ScalarProperty Name="other_deductions" ColumnName="other_deductions" />
+          <ScalarProperty Name="withholding_tax" ColumnName="withholding_tax" />
+          <ScalarProperty Name="gsis_sss_contribution" ColumnName="gsis_sss_contribution" />
+          <ScalarProperty Name="pag_ibig_contribution" ColumnName="pag_ibig_contribution" />
+          <ScalarProperty Name="philhealth_contribution" ColumnName="philhealth_contribution" />
+          <ScalarProperty Name="generate_by" ColumnName="generate_by" />
+          <ScalarProperty Name="net_pay" ColumnName="net_pay" />
+          <ScalarProperty Name="absent_deduction" ColumnName="absent_deduction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Penalty_Global_Settings_Table">
+      <EntityTypeMapping TypeName="db_a7729a_hrisdatabaseModel.Penalty_Global_Settings_Table">
+        <MappingFragment StoreEntitySet="Penalty_Global_Settings_Table">
+          <ScalarProperty Name="penalty_id" ColumnName="penalty_id" />
+          <ScalarProperty Name="penalty_type" ColumnName="penalty_type" />
+          <ScalarProperty Name="penalty_amount" ColumnName="penalty_amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

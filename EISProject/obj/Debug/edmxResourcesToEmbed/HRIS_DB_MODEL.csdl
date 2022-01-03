@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HumanResourceDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adjustment_Global_Settings_Table">
+    <Key>
+      <PropertyRef Name="adjustment_id" />
+    </Key>
+    <Property Name="adjustment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adjustment_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="amount_percent" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Attendance_Global_Settings_Table">
+    <Key>
+      <PropertyRef Name="setting_time_id" />
+    </Key>
+    <Property Name="setting_time_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="global_time_in_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="global_time_out_mandatory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="late_grace_time_period" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Cash_Advance_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_id" Type="Int32" />
+    <Property Name="employee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="total_payment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="amount_payment_per_month" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="month_length" Type="Int32" />
+    <Property Name="remaining_balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <Property Name="log_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employee_Information_Table" Relationship="Self.FK_Cash_Advance_Table_Employee_Information_Table" FromRole="Cash_Advance_Table" ToRole="Employee_Information_Table" />
+  </EntityType>
+  <EntityType Name="Deductions_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="deduction_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="deduction_amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="log_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="deduction_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Department_Table">
+    <Key>
+      <PropertyRef Name="department_id" />
+    </Key>
+    <Property Name="department_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="department_date_added" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="department_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="department_head" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="added_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="department_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Employee_Allowance_Table">
+    <Key>
+      <PropertyRef Name="allowance_id" />
+    </Key>
+    <Property Name="allowance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="allowance_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="amount_per_month" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <Property Name="log_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Employee_Attendance_Table">
+    <Key>
+      <PropertyRef Name="attendance_id" />
+    </Key>
+    <Property Name="attendance_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_id" Type="Int32" />
+    <Property Name="employee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="time_in" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="time_out" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="working_hours" Type="Int32" />
+    <Property Name="attendance_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="overtime_hours" Type="Int32" />
+    <Property Name="rate_earned" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="day_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employee_Information_Table" Relationship="Self.FK_Employee_Attendance_Table_Employee_Information_Table" FromRole="Employee_Attendance_Table" ToRole="Employee_Information_Table" />
+  </EntityType>
+  <EntityType Name="Employee_Information_Table">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_work_id" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="given_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="birth_date" Type="DateTime" Precision="0" />
+    <Property Name="age" Type="Int32" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="civil_status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="current_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="house_lot_block_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="brgy" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="zip_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="email_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone_number" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="contract" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="job_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rate_per_hour" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="telephone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="campus_assigned" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="department_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_hired" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="work_location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="philhealth_number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SSS_number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TIN_number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="profile_picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="employee_status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="required_documents" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description_for_archiving" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="suspension_lift_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <Property Name="email_received" Type="Int32" />
+    <NavigationProperty Name="Cash_Advance_Table" Relationship="Self.FK_Cash_Advance_Table_Employee_Information_Table" FromRole="Employee_Information_Table" ToRole="Cash_Advance_Table" />
+    <NavigationProperty Name="Employee_Attendance_Table" Relationship="Self.FK_Employee_Attendance_Table_Employee_Information_Table" FromRole="Employee_Information_Table" ToRole="Employee_Attendance_Table" />
+    <NavigationProperty Name="Employee_Portal_Accounts_Table" Relationship="Self.FK_Accounts_Table_Employee_Information_Table" FromRole="Employee_Information_Table" ToRole="Employee_Portal_Accounts_Table" />
+    <NavigationProperty Name="employee_leave_table" Relationship="Self.FK_employee_leave_table_employee_leave_table" FromRole="Employee_Information_Table" ToRole="employee_leave_table" />
+    <NavigationProperty Name="Employees_Documents_Table" Relationship="Self.FK_Employees_Documents_Table_Employee_Information_Table" FromRole="Employee_Information_Table" ToRole="Employees_Documents_Table" />
+    <NavigationProperty Name="Payroll_Table" Relationship="Self.FK_Payroll_Table_Employee_Information_Table" FromRole="Employee_Information_Table" ToRole="Payroll_Table" />
+  </EntityType>
+  <EntityType Name="employee_leave_table">
+    <Key>
+      <PropertyRef Name="leave_id" />
+    </Key>
+    <Property Name="leave_id" Type="Int32" Nullable="false" />
+    <Property Name="employee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employee_id" Type="Int32" Nullable="false" />
+    <Property Name="leave_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Employee_Information_Table" Relationship="Self.FK_employee_leave_table_employee_leave_table" FromRole="employee_leave_table" ToRole="Employee_Information_Table" />
+  </EntityType>
+  <EntityType Name="Employee_Portal_Accounts_Table">
+    <Key>
+      <PropertyRef Name="portal_account_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="account_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="portal_account_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Employee_Information_Table" Relationship="Self.FK_Accounts_Table_Employee_Information_Table" FromRole="Employee_Portal_Accounts_Table" ToRole="Employee_Information_Table" />
+  </EntityType>
+  <EntityType Name="Employee_Positions_Table">
+    <Key>
+      <PropertyRef Name="position_id" />
+    </Key>
+    <Property Name="position_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date_added" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rate_per_hour" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="log_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Employees_Documents_Table">
+    <Key>
+      <PropertyRef Name="file_id" />
+    </Key>
+    <Property Name="file_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_id" Type="Int32" Nullable="false" />
+    <Property Name="filename" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="filetype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="employee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date_uploaded" Type="DateTime" Precision="0" />
+    <Property Name="file_size" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="added_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employee_Information_Table" Relationship="Self.FK_Employees_Documents_Table_Employee_Information_Table" FromRole="Employees_Documents_Table" ToRole="Employee_Information_Table" />
+  </EntityType>
+  <EntityType Name="Holidays_Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="holiday_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date_occurrence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <Property Name="log_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HRIS_Account_Table">
+    <Key>
+      <PropertyRef Name="hris_account_id" />
+    </Key>
+    <Property Name="hris_account_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="access_level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date_added" Type="DateTime" Precision="0" />
+    <Property Name="account_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="profile_picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HRIS_System_Global_Settings__Table">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="system_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="system_logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Leave_Type_Table">
+    <Key>
+      <PropertyRef Name="leave_type_id" />
+    </Key>
+    <Property Name="leave_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="leave_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="leave_type_date_added" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Log_History_Table">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_id" Type="Int32" Nullable="false" />
+    <Property Name="login_date" Type="DateTime" Precision="0" />
+    <Property Name="login_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="logout_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="logout_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Log_History_Table1" Relationship="Self.FK_Log_History_Table_Log_History_Table" FromRole="Log_History_Table" ToRole="Log_History_Table1" />
+    <NavigationProperty Name="Log_History_Table2" Relationship="Self.FK_Log_History_Table_Log_History_Table" FromRole="Log_History_Table1" ToRole="Log_History_Table" />
+  </EntityType>
+  <EntityType Name="Payroll_Table">
+    <Key>
+      <PropertyRef Name="payslip_id" />
+    </Key>
+    <Property Name="payslip_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_id" Type="Int32" />
+    <Property Name="employee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="total_hours_rendered" Type="Int32" />
+    <Property Name="total_days_work" Type="Int32" />
+    <Property Name="basic_pay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="allowance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="gross_pay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="date_issued" Type="DateTime" Precision="0" />
+    <Property Name="total_overtime_hours" Type="Int32" />
+    <Property Name="overtime_pay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="cash_advance_remaining_balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="cash_advance_payment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="cutoff_start" Type="DateTime" Precision="0" />
+    <Property Name="cutoff_end" Type="DateTime" Precision="0" />
+    <Property Name="late_deductions" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="other_deductions" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="withholding_tax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="gsis_sss_contribution" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="pag_ibig_contribution" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="philhealth_contribution" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="generate_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="net_pay" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="absent_deduction" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="Employee_Information_Table" Relationship="Self.FK_Payroll_Table_Employee_Information_Table" FromRole="Payroll_Table" ToRole="Employee_Information_Table" />
+  </EntityType>
+  <EntityType Name="Penalty_Global_Settings_Table">
+    <Key>
+      <PropertyRef Name="penalty_id" />
+    </Key>
+    <Property Name="penalty_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="penalty_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="penalty_amount" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Cash_Advance_Table_Employee_Information_Table">
+    <End Role="Employee_Information_Table" Type="Self.Employee_Information_Table" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cash_Advance_Table" Type="Self.Cash_Advance_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Information_Table">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Cash_Advance_Table">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Attendance_Table_Employee_Information_Table">
+    <End Role="Employee_Information_Table" Type="Self.Employee_Information_Table" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employee_Attendance_Table" Type="Self.Employee_Attendance_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Information_Table">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Employee_Attendance_Table">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Accounts_Table_Employee_Information_Table">
+    <End Role="Employee_Information_Table" Type="Self.Employee_Information_Table" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employee_Portal_Accounts_Table" Type="Self.Employee_Portal_Accounts_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Information_Table">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Employee_Portal_Accounts_Table">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_leave_table_employee_leave_table">
+    <End Role="Employee_Information_Table" Type="Self.Employee_Information_Table" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="employee_leave_table" Type="Self.employee_leave_table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Information_Table">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="employee_leave_table">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Documents_Table_Employee_Information_Table">
+    <End Role="Employee_Information_Table" Type="Self.Employee_Information_Table" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employees_Documents_Table" Type="Self.Employees_Documents_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Information_Table">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Employees_Documents_Table">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payroll_Table_Employee_Information_Table">
+    <End Role="Employee_Information_Table" Type="Self.Employee_Information_Table" Multiplicity="0..1" />
+    <End Role="Payroll_Table" Type="Self.Payroll_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Information_Table">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Payroll_Table">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Log_History_Table_Log_History_Table">
+    <End Role="Log_History_Table" Type="Self.Log_History_Table" Multiplicity="1" />
+    <End Role="Log_History_Table1" Type="Self.Log_History_Table" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Log_History_Table">
+        <PropertyRef Name="log_id" />
+      </Principal>
+      <Dependent Role="Log_History_Table1">
+        <PropertyRef Name="log_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HumanResourceDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adjustment_Global_Settings_Table" EntityType="Self.Adjustment_Global_Settings_Table" />
+    <EntitySet Name="Attendance_Global_Settings_Table" EntityType="Self.Attendance_Global_Settings_Table" />
+    <EntitySet Name="Cash_Advance_Table" EntityType="Self.Cash_Advance_Table" />
+    <EntitySet Name="Deductions_Table" EntityType="Self.Deductions_Table" />
+    <EntitySet Name="Department_Table" EntityType="Self.Department_Table" />
+    <EntitySet Name="Employee_Allowance_Table" EntityType="Self.Employee_Allowance_Table" />
+    <EntitySet Name="Employee_Attendance_Table" EntityType="Self.Employee_Attendance_Table" />
+    <EntitySet Name="Employee_Information_Table" EntityType="Self.Employee_Information_Table" />
+    <EntitySet Name="employee_leave_table" EntityType="Self.employee_leave_table" />
+    <EntitySet Name="Employee_Portal_Accounts_Table" EntityType="Self.Employee_Portal_Accounts_Table" />
+    <EntitySet Name="Employee_Positions_Table" EntityType="Self.Employee_Positions_Table" />
+    <EntitySet Name="Employees_Documents_Table" EntityType="Self.Employees_Documents_Table" />
+    <EntitySet Name="Holidays_Table" EntityType="Self.Holidays_Table" />
+    <EntitySet Name="HRIS_Account_Table" EntityType="Self.HRIS_Account_Table" />
+    <EntitySet Name="HRIS_System_Global_Settings__Table" EntityType="Self.HRIS_System_Global_Settings__Table" />
+    <EntitySet Name="Leave_Type_Table" EntityType="Self.Leave_Type_Table" />
+    <EntitySet Name="Log_History_Table" EntityType="Self.Log_History_Table" />
+    <EntitySet Name="Payroll_Table" EntityType="Self.Payroll_Table" />
+    <EntitySet Name="Penalty_Global_Settings_Table" EntityType="Self.Penalty_Global_Settings_Table" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Cash_Advance_Table_Employee_Information_Table" Association="Self.FK_Cash_Advance_Table_Employee_Information_Table">
+      <End Role="Employee_Information_Table" EntitySet="Employee_Information_Table" />
+      <End Role="Cash_Advance_Table" EntitySet="Cash_Advance_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Attendance_Table_Employee_Information_Table" Association="Self.FK_Employee_Attendance_Table_Employee_Information_Table">
+      <End Role="Employee_Information_Table" EntitySet="Employee_Information_Table" />
+      <End Role="Employee_Attendance_Table" EntitySet="Employee_Attendance_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Accounts_Table_Employee_Information_Table" Association="Self.FK_Accounts_Table_Employee_Information_Table">
+      <End Role="Employee_Information_Table" EntitySet="Employee_Information_Table" />
+      <End Role="Employee_Portal_Accounts_Table" EntitySet="Employee_Portal_Accounts_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_leave_table_employee_leave_table" Association="Self.FK_employee_leave_table_employee_leave_table">
+      <End Role="Employee_Information_Table" EntitySet="Employee_Information_Table" />
+      <End Role="employee_leave_table" EntitySet="employee_leave_table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Documents_Table_Employee_Information_Table" Association="Self.FK_Employees_Documents_Table_Employee_Information_Table">
+      <End Role="Employee_Information_Table" EntitySet="Employee_Information_Table" />
+      <End Role="Employees_Documents_Table" EntitySet="Employees_Documents_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payroll_Table_Employee_Information_Table" Association="Self.FK_Payroll_Table_Employee_Information_Table">
+      <End Role="Employee_Information_Table" EntitySet="Employee_Information_Table" />
+      <End Role="Payroll_Table" EntitySet="Payroll_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Log_History_Table_Log_History_Table" Association="Self.FK_Log_History_Table_Log_History_Table">
+      <End Role="Log_History_Table" EntitySet="Log_History_Table" />
+      <End Role="Log_History_Table1" EntitySet="Log_History_Table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

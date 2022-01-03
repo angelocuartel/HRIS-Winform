@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeeInformationSystemDataBaseModelStoreContainer" CdmEntityContainer="EmployeeInformationSystemDataBaseEntities">
+    <EntitySetMapping Name="Accounts_Table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.Accounts_Table">
+        <MappingFragment StoreEntitySet="Accounts_Table">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="access_level" ColumnName="access_level" />
+          <ScalarProperty Name="account_status" ColumnName="account_status" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="user_account_id" ColumnName="user_account_id" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Campus_Table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.Campus_Table">
+        <MappingFragment StoreEntitySet="Campus_Table">
+          <ScalarProperty Name="campus_id" ColumnName="campus_id" />
+          <ScalarProperty Name="campus_head" ColumnName="campus_head" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="campus_location" ColumnName="campus_location" />
+          <ScalarProperty Name="campus_name" ColumnName="campus_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department_Table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.Department_Table">
+        <MappingFragment StoreEntitySet="Department_Table">
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="department_location" ColumnName="department_location" />
+          <ScalarProperty Name="department_date_added" ColumnName="department_date_added" />
+          <ScalarProperty Name="department_code" ColumnName="department_code" />
+          <ScalarProperty Name="department_head" ColumnName="department_head" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Information_Table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.Employee_Information_Table">
+        <MappingFragment StoreEntitySet="Employee_Information_Table">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="given_name" ColumnName="given_name" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="current_address" ColumnName="current_address" />
+          <ScalarProperty Name="house_lot_block_number" ColumnName="house_lot_block_number" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="brgy" ColumnName="brgy" />
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="contract" ColumnName="contract" />
+          <ScalarProperty Name="job_title" ColumnName="job_title" />
+          <ScalarProperty Name="rate_per_hour" ColumnName="rate_per_hour" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="campus_assigned" ColumnName="campus_assigned" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="date_hired" ColumnName="date_hired" />
+          <ScalarProperty Name="work_location" ColumnName="work_location" />
+          <ScalarProperty Name="philhealth_number" ColumnName="philhealth_number" />
+          <ScalarProperty Name="SSS_number" ColumnName="SSS_number" />
+          <ScalarProperty Name="TIN_number" ColumnName="TIN_number" />
+          <ScalarProperty Name="profile_picture" ColumnName="profile_picture" />
+          <ScalarProperty Name="employee_status" ColumnName="employee_status" />
+          <ScalarProperty Name="required_documents" ColumnName="required_documents" />
+          <ScalarProperty Name="description_for_archiving" ColumnName="description_for_archiving" />
+          <ScalarProperty Name="suspension_lift_date" ColumnName="suspension_lift_date" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employee_leave_table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.employee_leave_table">
+        <MappingFragment StoreEntitySet="employee_leave_table">
+          <ScalarProperty Name="leave_id" ColumnName="leave_id" />
+          <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="leave_type" ColumnName="leave_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees_Documents_Table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.Employees_Documents_Table">
+        <MappingFragment StoreEntitySet="Employees_Documents_Table">
+          <ScalarProperty Name="file_id" ColumnName="file_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+          <ScalarProperty Name="date_uploaded" ColumnName="date_uploaded" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leave_Type_Table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.Leave_Type_Table">
+        <MappingFragment StoreEntitySet="Leave_Type_Table">
+          <ScalarProperty Name="leave_type_id" ColumnName="leave_type_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="leave_type_name" ColumnName="leave_type_name" />
+          <ScalarProperty Name="leave_type_date_added" ColumnName="leave_type_date_added" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log_History_Table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.Log_History_Table">
+        <MappingFragment StoreEntitySet="Log_History_Table">
+          <ScalarProperty Name="logout_time" ColumnName="logout_time" />
+          <ScalarProperty Name="logout_date" ColumnName="logout_date" />
+          <ScalarProperty Name="login_time" ColumnName="login_time" />
+          <ScalarProperty Name="login_date" ColumnName="login_date" />
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Positions_Table">
+      <EntityTypeMapping TypeName="EmployeeInformationSystemDataBaseModel.Employee_Positions_Table">
+        <MappingFragment StoreEntitySet="Employee_Positions_Table">
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="date_added" ColumnName="date_added" />
+          <ScalarProperty Name="position_code" ColumnName="position_code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

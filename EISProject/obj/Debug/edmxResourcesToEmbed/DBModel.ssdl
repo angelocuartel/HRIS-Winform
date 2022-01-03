@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeInformationSystemDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accounts_Table">
+    <Key>
+      <PropertyRef Name="account_id" />
+    </Key>
+    <Property Name="employee_id" Type="int" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="access_level" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="account_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EmployeeInformationSystemDataBase.dbo.Archived_Employee_Information_Table' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Archived_Employee_Information_Table">
+    <Key>
+      <PropertyRef Name="employee_id" />
+      <PropertyRef Name="last_name" />
+      <PropertyRef Name="given_name" />
+      <PropertyRef Name="middle_name" />
+      <PropertyRef Name="age" />
+      <PropertyRef Name="gender" />
+      <PropertyRef Name="current_address" />
+      <PropertyRef Name="email_address" />
+      <PropertyRef Name="job_title" />
+      <PropertyRef Name="contract" />
+      <PropertyRef Name="department_name" />
+      <PropertyRef Name="date_hired" />
+      <PropertyRef Name="work_location" />
+      <PropertyRef Name="monthly_salary" />
+      <PropertyRef Name="philhealth_number" />
+      <PropertyRef Name="SSS_number" />
+      <PropertyRef Name="TIN_number" />
+      <PropertyRef Name="access_level" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="employee_id" Type="int" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="given_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="middle_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="current_address" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="email_address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone_number" Type="varchar" MaxLength="11" />
+    <Property Name="job_title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contract" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="department_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date_hired" Type="datetime" Nullable="false" />
+    <Property Name="work_location" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="monthly_salary" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="philhealth_number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SSS_number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TIN_number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="access_level" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="profile_picture" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department_Table">
+    <Key>
+      <PropertyRef Name="department_name" />
+    </Key>
+    <Property Name="department_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="department_location" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee_Information_Table">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="int" Nullable="false" />
+    <Property Name="last_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="given_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="middle_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="current_address" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="email_address" Type="varchar" MaxLength="50" />
+    <Property Name="phone_number" Type="varchar" MaxLength="11" />
+    <Property Name="job_title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contract" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="department_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date_hired" Type="datetime" Nullable="false" />
+    <Property Name="work_location" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="monthly_salary" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+    <Property Name="philhealth_number" Type="varchar" MaxLength="12" />
+    <Property Name="SSS_number" Type="varchar" MaxLength="12" />
+    <Property Name="TIN_number" Type="varchar" MaxLength="12" />
+    <Property Name="access_level" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="profile_picture" Type="varchar(max)" />
+    <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EmployeeInformationSystemDataBase.dbo.Employees_Documents_Table' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Employees_Documents_Table">
+    <Key>
+      <PropertyRef Name="employee_id" />
+      <PropertyRef Name="filename" />
+      <PropertyRef Name="filetype" />
+      <PropertyRef Name="employee_name" />
+      <PropertyRef Name="date_uploaded" />
+    </Key>
+    <Property Name="employee_id" Type="int" Nullable="false" />
+    <Property Name="filename" Type="varchar(max)" Nullable="false" />
+    <Property Name="filetype" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="employee_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date_uploaded" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Log_History_Table">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="account_id" Type="int" Nullable="false" />
+    <Property Name="login_datetime" Type="datetime" Nullable="false" />
+    <Property Name="logout_datetime" Type="datetime" Nullable="false" />
+    <Property Name="account_status" Type="nchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Accounts_Table_Employee_Information_Table">
+    <End Role="Employee_Information_Table" Type="Self.Employee_Information_Table" Multiplicity="1" />
+    <End Role="Accounts_Table" Type="Self.Accounts_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Information_Table">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Accounts_Table">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Documents_Table_Employee_Information_Table">
+    <End Role="Employee_Information_Table" Type="Self.Employee_Information_Table" Multiplicity="1" />
+    <End Role="Employees_Documents_Table" Type="Self.Employees_Documents_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Information_Table">
+        <PropertyRef Name="employee_id" />
+      </Principal>
+      <Dependent Role="Employees_Documents_Table">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Log_History_Table_Accounts_Table">
+    <End Role="Accounts_Table" Type="Self.Accounts_Table" Multiplicity="1" />
+    <End Role="Log_History_Table" Type="Self.Log_History_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accounts_Table">
+        <PropertyRef Name="account_id" />
+      </Principal>
+      <Dependent Role="Log_History_Table">
+        <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EmployeeInformationSystemDataBaseModelStoreContainer">
+    <EntitySet Name="Accounts_Table" EntityType="Self.Accounts_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department_Table" EntityType="Self.Department_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_Information_Table" EntityType="Self.Employee_Information_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log_History_Table" EntityType="Self.Log_History_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Archived_Employee_Information_Table" EntityType="Self.Archived_Employee_Information_Table" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Archived_Employee_Information_Table].[employee_id] AS [employee_id], 
+    [Archived_Employee_Information_Table].[last_name] AS [last_name], 
+    [Archived_Employee_Information_Table].[given_name] AS [given_name], 
+    [Archived_Employee_Information_Table].[middle_name] AS [middle_name], 
+    [Archived_Employee_Information_Table].[age] AS [age], 
+    [Archived_Employee_Information_Table].[gender] AS [gender], 
+    [Archived_Employee_Information_Table].[current_address] AS [current_address], 
+    [Archived_Employee_Information_Table].[email_address] AS [email_address], 
+    [Archived_Employee_Information_Table].[phone_number] AS [phone_number], 
+    [Archived_Employee_Information_Table].[job_title] AS [job_title], 
+    [Archived_Employee_Information_Table].[contract] AS [contract], 
+    [Archived_Employee_Information_Table].[department_name] AS [department_name], 
+    [Archived_Employee_Information_Table].[date_hired] AS [date_hired], 
+    [Archived_Employee_Information_Table].[work_location] AS [work_location], 
+    [Archived_Employee_Information_Table].[monthly_salary] AS [monthly_salary], 
+    [Archived_Employee_Information_Table].[philhealth_number] AS [philhealth_number], 
+    [Archived_Employee_Information_Table].[SSS_number] AS [SSS_number], 
+    [Archived_Employee_Information_Table].[TIN_number] AS [TIN_number], 
+    [Archived_Employee_Information_Table].[access_level] AS [access_level], 
+    [Archived_Employee_Information_Table].[profile_picture] AS [profile_picture], 
+    [Archived_Employee_Information_Table].[status] AS [status]
+    FROM [dbo].[Archived_Employee_Information_Table] AS [Archived_Employee_Information_Table]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Employees_Documents_Table" EntityType="Self.Employees_Documents_Table" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Employees_Documents_Table].[employee_id] AS [employee_id], 
+    [Employees_Documents_Table].[filename] AS [filename], 
+    [Employees_Documents_Table].[filetype] AS [filetype], 
+    [Employees_Documents_Table].[employee_name] AS [employee_name], 
+    [Employees_Documents_Table].[date_uploaded] AS [date_uploaded]
+    FROM [dbo].[Employees_Documents_Table] AS [Employees_Documents_Table]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Accounts_Table_Employee_Information_Table" Association="Self.FK_Accounts_Table_Employee_Information_Table">
+      <End Role="Employee_Information_Table" EntitySet="Employee_Information_Table" />
+      <End Role="Accounts_Table" EntitySet="Accounts_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Documents_Table_Employee_Information_Table" Association="Self.FK_Employees_Documents_Table_Employee_Information_Table">
+      <End Role="Employee_Information_Table" EntitySet="Employee_Information_Table" />
+      <End Role="Employees_Documents_Table" EntitySet="Employees_Documents_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Log_History_Table_Accounts_Table" Association="Self.FK_Log_History_Table_Accounts_Table">
+      <End Role="Accounts_Table" EntitySet="Accounts_Table" />
+      <End Role="Log_History_Table" EntitySet="Log_History_Table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
